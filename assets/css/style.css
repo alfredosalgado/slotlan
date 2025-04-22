@@ -810,7 +810,7 @@ body {
   transform: translateY(-5px);
 }
 
-.carousel {
+.carousel2 {
   position: relative;
   width: 100%;
   aspect-ratio: 2/3; /* Proporción 2:3 para imágenes más alargadas */
