@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const carousels = {};
 
 // Inicializar cada carrusel
-document.querySelectorAll('.carousel').forEach(carousel => {
+document.querySelectorAll('.carousel2').forEach(carousel => {
   const gameId = carousel.getAttribute('data-game');
   carousels[gameId] = {
     currentIndex: 0,
@@ -109,7 +109,7 @@ function moveCarousel(gameId, direction) {
   carousel.currentIndex = (carousel.currentIndex + direction + totalImages) % totalImages;
 
   // Mover imágenes
-  const carouselImages = document.querySelector(`.carousel[data-game="${gameId}"] .carousel-images`);
+  const carouselImages = document.querySelector(`.carousel2[data-game="${gameId}"] .carousel-images`);
   carouselImages.style.transform = `translateX(-${carousel.currentIndex * 100}%)`;
 
   // Reiniciar cambio automático
@@ -196,7 +196,7 @@ const totalImagenes = 33; // Número total de imágenes
 for (let i = 1; i <= totalImagenes; i++) {
   // Crear el div contenedor
   const div = document.createElement('div');
-  div.className = 'miniatura col-6 col-md-4 col-lg-3 d-flex justify-content-center texto-fade card';
+  div.className = 'miniatura col-5 col-md-4 col-lg-3 d-flex justify-content-center texto-fade card';
 
   // Crear la imagen
   const img = document.createElement('img');
