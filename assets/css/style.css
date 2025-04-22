@@ -1,0 +1,948 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.text-barlowc {
+  font-family: "barlow condensed", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*------------COLOR NAV--------------*/
+.bg-ryf {
+  background: linear-gradient(to right, #ff3532, #a70909);
+}
+
+.div-con-imagen {
+  position: relative;
+  width: 100%;
+  background-image: url('../img/INFO.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.div-con-imagen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000706;
+  opacity: 0.5; /* Ajusta la opacidad para el efecto deseado */
+
+  pointer-events: none; /* Permite interactuar con los elementos debajo */
+}
+
+.textpoint {
+  font-size: 1.4rem;
+}
+
+.bg-etapa1 {
+  background-color: #128c7e91;
+}
+
+.bg-etapa2 {
+  background-color:#2e86bd8f;
+}
+
+.bg-etapa3 {
+  background-color:#d17d0798;
+}
+
+.alerta-cupos {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: red;
+  text-transform: uppercase;
+  border-radius: 10px;
+  animation: pulsar 1.5s infinite alternate, brillo 2s infinite alternate;
+  text-align: center;
+  border: 3px solid white;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+@keyframes pulsar {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.1);
+  }
+}
+
+@keyframes brillo {
+  0% {
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+      border-color: white;
+  }
+  100% {
+      box-shadow: 0 0 20px rgba(255, 255, 0, 1);
+      border-color: yellow;
+  }
+}
+
+
+
+
+
+.div-con-imagen2 {
+  position: relative;
+  width: 100%;
+ 
+  background-image: url('../img/serv.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.div-con-imagen2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.3; /* Ajusta la opacidad para el efecto deseado */
+
+  pointer-events: none; /* Permite interactuar con los elementos debajo */
+}
+
+.div-con-imagen3 {
+  position: relative;
+  width: 100%;
+  background-image: url('../img/stats.png');
+  background-size: cover;
+  background-position: center;
+  border-top: 3px solid #e92a2a; /* Grosor, estilo y color */
+}
+
+.div-con-imagen3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e7891df3;
+  opacity: 0.6; /* Ajusta la opacidad para el efecto deseado */
+
+  pointer-events: none; /* Permite interactuar con los elementos debajo */
+}
+
+.hp {
+  color: white;
+}
+
+.bg-ryf2 {
+  background: linear-gradient(to right, #0b4cb0, #8560d2);
+}
+
+.bg-ryf3 {
+  background-color: #ddc2a9;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.sha {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+  z-index: 2; /* Asegura que el texto quede por encima de las imágenes */
+}
+
+.text-barlow {
+  font-family: "barlow", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.aparicion {
+  animation: fadeIn 6s ease-out forwards; /* Animación de aparición */
+}
+
+.logoanimacion {
+  opacity: 0; /* Oculto al inicio */
+  transform: translateY(-10); /* Asegurar que esté en su posición inicial */
+  transition: transform 0.6s ease; /* Mantiene la transición para hover */
+}
+
+.logoanimacion:hover {
+  transform: translateY(-10px); /* Movimiento suave al pasar el mouse */
+}
+
+/*CARRUSEL DE IMAGENES*/
+.carousel-item {
+  position: relative; /* Para que la imagen se posicione absolutamente */
+  overflow: hidden; /* Ocultamos cualquier parte de la imagen que se salga del contenedor */
+  height: 450px; /* O la altura que desees para tu carrusel */
+  margin-right: ;
+}
+
+.carousel-item::before {
+  content: ''; /* Creamos un pseudo-elemento para el fondo */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.0); /* Fondo blanco con 20% de opacidad */
+  z-index: 1; /* Aseguramos que el fondo esté sobre la imagen, pero debajo del contenido */
+}
+
+.carousel-item img {
+  width: 100%; /* La imagen ocupa todo el espacio disponible */
+  height: 100%; /* La imagen mantiene el tamaño del contenedor */
+  object-fit: cover; /* Asegura que la imagen se recorte para cubrir el contenedor sin distorsión */
+  position: absolute; /* La imagen se posiciona encima del contenedor */
+  top: 0;
+  left: 0;
+  transition: transform 9s ease-in-out; /* Animación suave para la escala */
+  pointer-events: none;
+}
+
+/* Aplicamos la animación solo a la imagen activa */
+.carousel-item.active img {
+  animation: growImage 11s ease-in-out infinite; /* Hace crecer solo la imagen */
+}
+
+/* Definición de la animación */
+@keyframes growImage {
+  0% {
+    transform: scale(1); /* Tamaño inicial */
+  }
+  100% {
+    transform: scale(1.20); /* Aumenta el tamaño de la imagen */
+  }
+}
+
+.carousel-item-next img,
+.carousel-item-prev img {
+  filter: blur(2px); /* Un pequeño desenfoque para las imágenes de transición */
+}
+
+/* Estilo para el contenedor de la imagen */
+.image-container {
+  position: relative; /* Necesario para posicionar correctamente las imágenes */
+  height: 100%;
+}
+/*------------------------------------------------------*/
+
+/*BOTONES CARRUSEL */
+/* Forzar el caption a que esté centrado y sobre la imagen */
+.carousel-caption-container {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 2; /* Asegura que esté por encima de la imagen */
+}
+
+/* Sobrescribir el estilo predeterminado de Bootstrap */
+.carousel-caption.custom-caption {
+  position: static; /* Para que no herede la posición absoluta de Bootstrap */
+  display: inline-block;
+  background: transparent; /* Ajusta si deseas fondo */
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Centrar los botones y añadir separación */
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 15px;
+  pointer-events: auto;
+}
+
+/* Estilos para los botones */
+.carousel-buttons .btn {
+  pointer-events: auto; /* Garantiza la interactividad en cada botón */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  z-index: 3; /* Asegura que los botones estén por encima */
+}
+
+/* Botón Servicios */
+.carousel-buttons .btn-primary {
+  background-color: transparent;
+  border: 2px solid #f1ca48;
+  border-radius: 10px; /* Esquinas redondeadas */
+  color: white;
+}
+
+.carousel-buttons .btn-primary:hover {
+  background-color: #f1ca48;
+}
+
+/* Botón Planes */
+.carousel-buttons .btn-secondary {
+  background-color: transparent;
+  border: 2px solid #2b1880;
+  border-radius: 10px; /* Esquinas redondeadas */
+  color: white;
+}
+
+.carousel-buttons .btn-secondary:hover {
+  background-color: #2b1880;
+}
+
+/* Si fuese necesario, asegúrate de que la imagen y su pseudo-elemento no interfieran */
+
+
+
+/*--------------------------------------------------------*/
+
+
+
+/*TEXTO BIENVENIDOS*/
+/* Estilo para el contenedor del texto */
+.carousel-caption-container {
+  position: absolute; /* Lo posicionamos de manera absoluta en el carrusel */
+  top: 0; /* Asegura que el contenedor cubra todo el alto */
+  left: 0; /* Asegura que el contenedor cubra todo el ancho */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+  height: 100%; /* Asegura que el contenedor ocupe todo el alto */
+  display: flex; /* Activa Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  z-index: 2; /* Asegura que el texto quede por encima de las imágenes */
+  pointer-events: none; /* Evita que el texto interfiera con la interacción con el carrusel */
+}
+/* Estilo para el texto */
+.carousel-caption {
+  top: 0; /* Asegura que el contenedor cubra todo el alto */
+  left: 0; /* Asegura que el contenedor cubra todo el ancho */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+  height: 100%; /* Asegura que el contenedor ocupe todo el alto */
+  display: flex; /* Activa Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  flex-direction: column;
+  color: white; /* Color del texto */
+  font-size: 4.5vw; /* Tamaño del texto */
+  font-weight: bold; /* Negrita */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.788); /* Sombra para mejorar visibilidad */
+  font-family: "barlow", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgba(0, 0, 0, 0.301);
+  width: 100%;
+}
+/*-------------------------------------------------------------------*/
+
+/* Estilo para las cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el agrandamiento y la sombra */
+  border: none; /* Eliminamos el borde predeterminado para un look más limpio */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil por defecto */
+  border-radius: 15px; /* Bordes ligeramente redondeados para suavizar el diseño */
+  overflow: hidden; /* Asegura que las imágenes no sobresalgan */
+}
+
+/* Efecto al pasar el mouse */
+.card:hover {
+  transform: scale(1.05); /* Agranda la card un 5% */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hacer hover */
+}
+
+/* Estilo para las imágenes dentro de las cards */
+.card-img-top {
+  transition: transform 0.3s ease; /* Suaviza el efecto de la imagen */
+}
+
+/* Efecto sutil en la imagen al hacer hover */
+.card:hover .card-img-top {
+  transform: scale(1.05); /* La imagen también se agranda ligeramente */
+}
+
+
+
+
+.titulo-animado {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.titulo-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+@keyframes fadeIn3 {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.texto-fade {
+  opacity: 0;
+}
+
+.texto-visible {
+  animation: fadeIn3 1.5s ease-out 0.3s forwards;
+}
+
+.description {
+  font-size: 1.3rem;
+}
+
+.text-count {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.bg-seguro {
+  background-image: url("../img/stats.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-whiteopacity {
+  background-color: rgba(255, 255, 255, 0.719);
+  width: 80%;
+}
+
+
+.counter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.counter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin: 0;
+}
+
+
+
+/* BOTON DE WHATSAPP*/
+/* Estilo para el botón flotante de WhatsApp */
+.whatsapp-btn {
+  position: fixed; /* Fija el botón en la pantalla */
+  bottom: 40px; /* Distancia desde el fondo */
+  right: 20px; /* Distancia desde el lado derecho */
+  width: 60px; /* Tamaño del botón */
+  height: 60px; /* Tamaño del botón */
+  border-radius: 50%; /* Hacerlo redondo */
+  background-color: #25d366; /* Fondo verde de WhatsApp */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para darle efecto de flotante */
+  z-index: 1000; /* Asegura que el botón siempre esté encima de otros elementos */
+  transition: all 0.3s ease; /* Suaviza las transiciones */
+}
+.whatsapp-icon {
+  width: 30px; /* Tamaño del icono de WhatsApp */
+  height: 30px;
+}
+/* Efecto hover para resaltar el botón */
+.whatsapp-btn:hover {
+  transform: scale(1.1); /* Hace que el botón se agrande un poco cuando pasa el mouse */
+}
+
+
+/* BOTON DE SCROLL*/
+/* Estilo para el botón de subir al principio */
+.scroll-to-top-btn {
+  display: none; /* Inicialmente oculto */
+  position: fixed; /* Fija el botón en la pantalla */
+  bottom: 120px; /* Distancia desde el fondo */
+  right: 20px; /* Distancia desde el lado derecho */
+  width: 60px; /* Tamaño del botón */
+  height: 60px; /* Tamaño del botón */
+  border-radius: 50%; /* Hace que sea redondo */
+  background-color: #007bff9f; /* Fondo azul */
+  color: white; /* Color del icono */
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar efecto flotante */
+  z-index: 1000; /* Asegura que el botón quede encima de otros elementos */
+  transition: all 0.3s ease; /* Suaviza las transiciones */
+  font-size: 24px; /* Tamaño del icono */
+  cursor: pointer; /* Cambia el cursor a mano cuando pasa sobre el botón */
+  position: fixed;
+}
+/* Efecto hover para resaltar el botón */
+.scroll-to-top-btn:hover {
+  transform: scale(1.1); /* Agranda el botón ligeramente cuando se pasa el mouse */
+}
+/* Estilo para el icono dentro del botón */
+.scroll-to-top-btn i {
+  font-size: 30px; /* Tamaño del icono */
+}
+/*----------------------------------------------------*/
+
+
+.bg-insta {
+  background: linear-gradient(to right, #ffba00, #ff0067);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html, body {
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+.he {
+  height: 15rem;
+}
+
+.btn-agenda {
+  display: inline-block;
+ border: 2px solid white;
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-agenda:hover {
+  background-color: #128C7E; /* Color más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Pequeño efecto de agrandamiento */
+}
+
+
+.btn-serv {
+  display: inline-block;
+ border: 2px solid #28c5a6;
+  color: rgb(10, 0, 0);
+  padding: 12px 20px;
+  margin:auto;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-serv:hover {
+  background-color: #28c5a6; /* Color más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Pequeño efecto de agrandamiento */
+}
+
+
+
+.tituloserv {
+  font-size: 1.2rem;
+  
+}
+
+.heightcont {
+  height: 7rem;
+}
+
+
+
+.texth {
+  
+}
+
+.widthicono {
+  width: 20%;
+}
+
+.card2 {
+  background-color: rgba(218, 61, 61, 0.904);
+}
+
+.card2:hover {
+  background-color: rgb(144, 76, 223);
+}
+
+a {
+  text-decoration: none;
+  text-decoration-color: white; /* Cambia el color de la línea (subrayado) */
+}
+
+
+
+/* Estilos generales */
+body {
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #f39608;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #d17e07;
+}
+
+/* Estilos del Pop-up */
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none; /* Oculto por defecto */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Asegura que esté sobre todo */
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn2 0.5s ease-in-out;
+}
+
+/* Estilos del botón de cierre */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Estilo del video */
+.video-container {
+  margin-top: 10px;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.circular-image {
+  width: 250px;  /* Define un ancho */
+  height: 250px; /* Define la misma altura para que sea un círculo */
+  border-radius: 50%; /* Convierte la imagen en un círculo */
+  object-fit: cover; /* Recorta la imagen para ajustarla dentro del círculo */
+}
+
+.text-presentacion {
+  font-size: 1.7rem;
+  background-color: #3150a033;
+  border-radius: 15px;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn2 {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.servinc {
+  position: relative;
+  top: -50%;
+  transform: translateY(-50%);
+  margin-left: 27%;
+  margin-right: 27%;
+}
+
+
+.text-pc {
+  margin-bottom: 100px;
+}
+
+.text-pc2 {
+  margin-bottom: 80px;
+  font-size: 1.5rem;
+
+}
+
+
+
+/*  GALERIA */
+
+/* .galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.miniatura {
+  margin: 10px;
+  cursor: pointer;
+} */
+
+.miniatura img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
+
+/* Estilos para el modal */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-contenido {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+#imagenGrande {
+  width: 100%;
+  height: auto;
+}
+
+.cerrar {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+  color: #bbb;
+  text-decoration: none;
+}
+/* FIN GALERIA */
+
+
+
+
+
+.games-section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.games-section h2 {
+  font-size: 2.5rem;
+  color: #0b4cb0;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.game-card {
+  background: linear-gradient(135deg, #b0ad0b, #d26060);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/3; /* Proporción 2:3 para imágenes más alargadas */
+  overflow: hidden;
+}
+
+.carousel-images {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen llene el contenedor */
+  flex-shrink: 0;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.game-info {
+  padding: 20px;
+  color: white;
+  text-align: left;
+}
+
+.game-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.game-info p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.game-info a {
+  display: inline-block;
+  background: #542ae9;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.game-info a:hover {
+  background: #bbec09;
+}
+
+@media (max-width: 768px) {
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-card {
+    max-width: 100%;
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .text-pc {
+    text-align: center;
+  }
+
+  .carousel-caption {
+    
+    font-size: 2vw; /* Tamaño del texto */
+   
+  }
+
+  .textcarro {
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  .carousel-item img {
+    width: auto; /* O 'initial' para resetearlo */
+    height: auto;
+    object-fit: unset;
+    position: absolute;
+    transition: transform 9s ease-in-out; /* Animación suave para la escala */
+  }
+}
+
+@media (min-width: 425px) {
+  .texth {
+    height: 8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  
+  .tituloserv {
+    font-size: 1.2rem;
+  }
+  .texth {
+    height: 12rem;
+    
+  }
+
+  .heightcont {
+    height: 7rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .texth {
+    height: 11rem;
+    font-size: 1.2rem;
+  }
+}
